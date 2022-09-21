@@ -1,4 +1,3 @@
-"use strict";
 window.addEventListener('load', () => {
     const from = document.querySelector("#new-task-form");
     const inputNome = document.querySelector("#input-name");

@@ -1,4 +1,3 @@
-"use strict";
 window.addEventListener('load', () => {
     const list_el = document.querySelector("#tasks");
     let taskList = JSON.parse(localStorage.getItem('listaDeEmpresas'));
