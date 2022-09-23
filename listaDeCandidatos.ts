@@ -1,5 +1,3 @@
-import { Chart } from "chart.js";
-
 window.addEventListener('load', () => {
     const list_el = document.querySelector("#tasks");
 
@@ -39,56 +37,34 @@ window.addEventListener('load', () => {
 
     iteration()
         
-    let java;
-    let groovy;
-    let angular;
-    let mysql;
+    let javaCount;
+    let groovyCount;
+    let angularCount;
+    let mysqlCount;
     
     for (let i = 0; i < taskList.length; i++) {
         if (taskList[i][6] == "java") {
-            java++
+            javaCount++
         } else if (taskList[i][6] == "groovy") {
-            groovy++
+            groovyCount++
         }   else if (taskList[i][6] == "angular") {
-            angular++
-        }  else mysql++
+            angularCount++
+        }  else mysqlCount++
     }
     
-    let ctx = <HTMLCanvasElement> document.getElementById(".line-chart");
+    const artificio_graf_java = document.createElement("div");
+    artificio_graf_java.classList.add("artificio");
+    artificio_graf_java.innerText = (javaCount);
     
-    const labels = ["Java", "Groovy", "Angular", "MySQL"];
+    const artificio_graf_groovy = document.createElement("div");
+    artificio_graf_groovy.classList.add("artificio");
+    artificio_graf_groovy.innerText = (groovyCount);
     
-    const data = {
-        labels: labels,
-        datasets: [{
-        label: 'Gráfico de Candidatos por Competência',
-        data: [3, 1, 2, 2],
-        backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(255, 159, 64, 0.2)',
-            'rgba(255, 205, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)'
-        ],
-        borderColor: [
-            'rgb(255, 99, 132)',
-            'rgb(255, 159, 64)',
-            'rgb(255, 205, 86)',
-            'rgb(75, 192, 192)'
-        ],
-        borderWidth: 1
-        }]
-    };
+    const artificio_graf_angular = document.createElement("div");
+    artificio_graf_angular.classList.add("artificio");
+    artificio_graf_angular.innerText = (angularCount);
     
-    let chartGraph = new Chart(ctx, {
-        type: 'bar',
-        data: data,
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-    
+    const artificio_graf_mysql = document.createElement("div");
+    artificio_graf_mysql.classList.add("artificio");
+    artificio_graf_mysql.innerText = (mysqlCount);
 })

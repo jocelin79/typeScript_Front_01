@@ -1,24 +1,24 @@
-window.addEventListener('load', () => {
-    const from = document.querySelector("#new-task-form");
-    const inputNome = document.querySelector("#input-name");
-    const inputEmail = document.querySelector("#input-email");
-    const inputCpf = document.querySelector("#input-cpf");
-    const inputIdade = document.querySelector("#input-idade");
-    const inputEstado = document.querySelector("#input-estado");
-    const inputCep = document.querySelector("#input-cep");
-    const inputComp = document.querySelector("#input-comp");
-    const inputDescription = document.querySelector("#input-description");
-    let taskList;
+window.addEventListener('load', function () {
+    var from = document.querySelector("#new-task-form");
+    var inputNome = document.querySelector("#input-name");
+    var inputEmail = document.querySelector("#input-email");
+    var inputCpf = document.querySelector("#input-cpf");
+    var inputIdade = document.querySelector("#input-idade");
+    var inputEstado = document.querySelector("#input-estado");
+    var inputCep = document.querySelector("#input-cep");
+    var inputComp = document.querySelector("#input-comp");
+    var inputDescription = document.querySelector("#input-description");
+    var taskList;
     if (JSON.parse(localStorage.getItem('listaDeCandidatos')) != null) {
         taskList = JSON.parse(localStorage.getItem('listaDeCandidatos'));
     }
     else {
         taskList = [];
     }
-    from === null || from === void 0 ? void 0 : from.addEventListener('submit', (e) => {
+    from === null || from === void 0 ? void 0 : from.addEventListener('submit', function (e) {
         e.preventDefault();
-        let id = taskList.length + 1;
-        let task = [];
+        var id = taskList.length + 1;
+        var task = [];
         task[0] = inputNome === null || inputNome === void 0 ? void 0 : inputNome.value;
         task[1] = inputEmail === null || inputEmail === void 0 ? void 0 : inputEmail.value;
         task[2] = inputCpf === null || inputCpf === void 0 ? void 0 : inputCpf.value;
