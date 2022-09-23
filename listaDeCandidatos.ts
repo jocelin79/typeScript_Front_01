@@ -37,10 +37,10 @@ window.addEventListener('load', () => {
 
     iteration()
         
-    let javaCount;
-    let groovyCount;
-    let angularCount;
-    let mysqlCount;
+    let javaCountCount;
+    let groovyCountCount;
+    let angularCountCount;
+    let mysqlCountCount;
     
     for (let i = 0; i < taskList.length; i++) {
         if (taskList[i][6] == "java") {
