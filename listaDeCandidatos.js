@@ -25,33 +25,33 @@ window.addEventListener('load', function () {
         ;
     };
     iteration();
-    var javaCount;
-    var groovyCount;
-    var angularCount;
-    var mysqlCount;
+    var javaCount = 0;
+    var groovyCount = 0;
+    var angularCount = 0;
+    var mysqlCount = 0;
     for (var i = 0; i < taskList.length; i++) {
-        if (taskList[i][6] == "java") {
-            javaCount++;
+        if (taskList[i][6] === "java") {
+            javaCount = javaCount + 1;
         }
-        else if (taskList[i][6] == "groovy") {
-            groovyCount++;
+        else if (taskList[i][6] === "groovy") {
+            groovyCount = groovyCount + 1;
         }
-        else if (taskList[i][6] == "angular") {
-            angularCount++;
+        else if (taskList[i][6] === "angular") {
+            angularCount = angularCount + 1;
         }
         else
-            mysqlCount++;
+            mysqlCount = mysqlCount + 1;
     }
-    var artificio_graf_java = document.createElement("div");
+    var artificio_graf_java = document.getElementById("graf_java");
     artificio_graf_java.classList.add("artificio");
-    artificio_graf_java.innerText = (javaCount);
-    var artificio_graf_groovy = document.createElement("div");
+    artificio_graf_java.innerText = (String(javaCount));
+    var artificio_graf_groovy = document.getElementById("graf_groovy");
     artificio_graf_groovy.classList.add("artificio");
-    artificio_graf_groovy.innerText = (groovyCount);
-    var artificio_graf_angular = document.createElement("div");
+    artificio_graf_groovy.innerText = (String(groovyCount));
+    var artificio_graf_angular = document.getElementById("graf_angular");
     artificio_graf_angular.classList.add("artificio");
-    artificio_graf_angular.innerText = (angularCount);
-    var artificio_graf_mysql = document.createElement("div");
+    artificio_graf_angular.innerText = (String(angularCount));
+    var artificio_graf_mysql = document.getElementById("graf_mysql");
     artificio_graf_mysql.classList.add("artificio");
-    artificio_graf_mysql.innerText = (mysqlCount);
+    artificio_graf_mysql.innerText = (String(mysqlCount));
 });

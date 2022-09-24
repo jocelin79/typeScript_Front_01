@@ -37,34 +37,34 @@ window.addEventListener('load', () => {
 
     iteration()
         
-    let javaCountCount;
-    let groovyCountCount;
-    let angularCountCount;
-    let mysqlCountCount;
+    let javaCount = 0;
+    let groovyCount = 0;
+    let angularCount = 0;
+    let mysqlCount = 0;
     
     for (let i = 0; i < taskList.length; i++) {
-        if (taskList[i][6] == "java") {
-            javaCount++
-        } else if (taskList[i][6] == "groovy") {
-            groovyCount++
-        }   else if (taskList[i][6] == "angular") {
-            angularCount++
-        }  else mysqlCount++
+        if (taskList[i][6] === "java") {
+            javaCount = javaCount + 1;
+        } else if (taskList[i][6] === "groovy") {
+            groovyCount = groovyCount + 1;
+        }   else if (taskList[i][6] === "angular") {
+            angularCount = angularCount + 1;
+        }  else mysqlCount = mysqlCount + 1;
     }
-    
-    const artificio_graf_java = document.createElement("div");
+
+    const artificio_graf_java = document.getElementById("graf_java");
     artificio_graf_java.classList.add("artificio");
-    artificio_graf_java.innerText = (javaCount);
+    artificio_graf_java.innerText = (String(javaCount));
     
-    const artificio_graf_groovy = document.createElement("div");
+    const artificio_graf_groovy = document.getElementById("graf_groovy");
     artificio_graf_groovy.classList.add("artificio");
-    artificio_graf_groovy.innerText = (groovyCount);
+    artificio_graf_groovy.innerText = (String(groovyCount));
     
-    const artificio_graf_angular = document.createElement("div");
+    const artificio_graf_angular = document.getElementById("graf_angular");
     artificio_graf_angular.classList.add("artificio");
-    artificio_graf_angular.innerText = (angularCount);
+    artificio_graf_angular.innerText = (String(angularCount));
     
-    const artificio_graf_mysql = document.createElement("div");
+    const artificio_graf_mysql = document.getElementById("graf_mysql");
     artificio_graf_mysql.classList.add("artificio");
-    artificio_graf_mysql.innerText = (mysqlCount);
+    artificio_graf_mysql.innerText = (String(mysqlCount));
 })
